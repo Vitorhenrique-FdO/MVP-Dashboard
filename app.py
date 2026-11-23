@@ -28,7 +28,9 @@ def selecionar_pagina(pagina: str) -> None:
 with st.sidebar:
     with st.container(key="sidebar_logo"):
         st.image(
-            r"imagens/DASHIDRO-logo.png",
+            BASE_DIR = Path(__file__).parent 
+            logo_path = BASE_DIR / "imagens" / "DASHIDRO-logo.png" 
+            st.image(str(logo_path))
             width=220,
             alt="Logo DASHIDRO",
         )
