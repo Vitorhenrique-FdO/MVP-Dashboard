@@ -28,7 +28,7 @@ def selecionar_pagina(pagina: str) -> None:
 with st.sidebar:
     with st.container(key="sidebar_logo"):
         st.image(
-            r"imagens\DASHIDRO-logo.png",
+            r"imagens/DASHIDRO-logo.png",
             width=220,
             alt="Logo DASHIDRO",
         )
