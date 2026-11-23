@@ -1,6 +1,10 @@
+from pathlib import Path
+
 import streamlit as st
 
 from utils.tema import aplicar_estilos
+
+BASE_DIR = Path(__file__).parent
 
 st.set_page_config(
     page_title="DASHIDRO · Observatório Hidrológico do Cerrado",
@@ -28,9 +32,7 @@ def selecionar_pagina(pagina: str) -> None:
 with st.sidebar:
     with st.container(key="sidebar_logo"):
         st.image(
-            BASE_DIR = Path(__file__).parent 
-            logo_path = BASE_DIR / "imagens" / "DASHIDRO-logo.png" 
-            st.image(str(logo_path))
+            str(BASE_DIR / "imagens" / "DASHIDRO-logo.png"),
             width=220,
             alt="Logo DASHIDRO",
         )
