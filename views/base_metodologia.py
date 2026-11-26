@@ -28,10 +28,7 @@ def renderizar_base() -> None:
         "Fontes, definições e exploração do conjunto de dados compartilhado pelo DASHIDRO."
     )
 
-    st.warning(
-        "Esta versão utiliza dados simulados para demonstração. "
-        "Os valores não são medições oficiais e não devem embasar decisões operacionais."
-    )
+
 
     with st.container(border=True):
         st.subheader("Fontes de referência")
