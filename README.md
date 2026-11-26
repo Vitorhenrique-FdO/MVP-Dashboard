@@ -23,5 +23,4 @@ Ative o ambiente Python do projeto e inicie o Streamlit:
 
 O painel é preenchido por dados simulados para demonstração. Eles não representam
 medições oficiais nem devem ser usados para decisões operacionais. A função
-`carregar_dados()` em `utils/dados.py` centraliza a geração da série; ela pode ser
-substituída por um carregador de CSV ou por integrações com fontes oficiais.
+`carregar_dados()` em `utils/dados.py` centraliza a geração da série.

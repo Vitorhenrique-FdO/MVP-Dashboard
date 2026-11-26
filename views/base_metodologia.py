@@ -34,24 +34,24 @@ def renderizar_base() -> None:
     )
 
     with st.container(border=True):
-        st.subheader("Fontes previstas para integração")
+        st.subheader("Fontes de referência")
         fontes = st.columns(3, gap="medium")
         with fontes[0]:
             st.markdown("**ANA · Agência Nacional de Águas e Saneamento Básico**")
             st.write(
-                "Referência prevista para séries de estações fluviométricas, "
+                "Referência para séries de estações fluviométricas, "
                 "pluviométricas e informações de outorgas."
             )
         with fontes[1]:
             st.markdown("**INMET · Instituto Nacional de Meteorologia**")
             st.write(
-                "Referência prevista para dados meteorológicos e de precipitação "
+                "Referência para dados meteorológicos e de precipitação "
                 "observados por estações."
             )
         with fontes[2]:
             st.markdown("**MapBiomas**")
             st.write(
-                "Referência prevista para cobertura e uso da terra, como contexto "
+                "Referência para cobertura e uso da terra, como contexto "
                 "territorial da análise hidrológica."
             )
 
@@ -61,9 +61,7 @@ def renderizar_base() -> None:
             "A base reproduz uma série mensal de 2000 a 2024 para as bacias dos rios "
             "Meia Ponte, Corumbá, Vermelho e Paranã. Os valores sintéticos incorporam "
             "variação sazonal de chuva e vazão, diferenças entre bacias e uma tendência "
-            "histórica moderada. O carregamento é centralizado e armazenado em cache "
-            "em `utils/dados.py`, para facilitar a futura substituição por arquivos "
-            "CSV ou fontes oficiais."
+            "histórica moderada. O carregamento é centralizado em `utils/dados.py`."
         )
 
     with st.container(border=True):

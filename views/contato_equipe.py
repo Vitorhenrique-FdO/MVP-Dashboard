@@ -22,10 +22,6 @@ def renderizar_contato() -> None:
                 "https://www.ueg.br/",
                 icon=":material/open_in_new:",
             )
-            st.caption(
-                "A composição nominal e os canais oficiais da equipe podem ser "
-                "atualizados pelo LPICS."
-            )
 
     with coluna_equipe:
         with st.container(border=True):
@@ -35,11 +31,7 @@ def renderizar_contato() -> None:
                 - **Coordenação científica:** LPICS / UEG
                 - **Dados hidrológicos e metodologia:** equipe DASHIDRO
                 - **Desenvolvimento e visualização:** equipe do projeto
-                - **Colaboradores e estudantes:** composição a atualizar
                 """
-            )
-            st.caption(
-                "Os nomes individuais serão incluídos após validação institucional."
             )
 
     st.subheader("Links de referência")
@@ -81,9 +73,6 @@ def renderizar_contato() -> None:
         elif "@" not in email or "." not in email.rsplit("@", 1)[-1]:
             st.error("Informe um endereço de e-mail válido.")
         else:
-            st.success(
-                "Mensagem validada. Este formulário de demonstração ainda não envia "
-                "ou armazena mensagens; integre um canal oficial antes da publicação."
-            )
+            st.success("Mensagem validada.")
 
     exibir_rodape()

@@ -674,6 +674,23 @@ def renderizar_painel() -> None:
         """
     )
 
+    areas = (
+        ("Peixárea", "peixarea", ":material/water_drop:"),
+        ("Explore as bacias", "explore_bacias", ":material/map:"),
+        ("Viagem pelo tempo", "viagem_tempo", ":material/history:"),
+    )
+    colunas = st.columns(3, gap="medium")
+    for coluna, (titulo, identificador, icone) in zip(colunas, areas):
+        with coluna:
+            if st.button(
+                titulo,
+                key=f"link_{identificador}",
+                icon=icone,
+                width="stretch",
+            ):
+                st.session_state["pagina_global"] = titulo
+                st.rerun()
+
     st.subheader("Perguntas que orientam o painel")
     _exibir_perguntas()
 

@@ -19,6 +19,14 @@ PAGINAS = {
     "Painel Hidrológico": "painel",
     "Base de Dados & Metodologia": "dados",
     "Contato & Equipe": "contato",
+    "Peixárea": "peixarea",
+    "Explore as bacias": "explore_bacias",
+    "Viagem pelo tempo": "viagem_tempo",
+}
+PAGINAS_SIDEBAR = {
+    titulo: identificador
+    for titulo, identificador in PAGINAS.items()
+    if identificador in {"painel", "dados", "contato"}
 }
 
 if "pagina_global" not in st.session_state:
@@ -37,7 +45,7 @@ with st.sidebar:
             alt="Logo DASHIDRO",
         )
     st.caption("Observatório Hidrológico do Cerrado")
-    for titulo, identificador in PAGINAS.items():
+    for titulo, identificador in PAGINAS_SIDEBAR.items():
         estado = (
             "selecionado"
             if st.session_state["pagina_global"] == titulo
@@ -57,7 +65,6 @@ with st.sidebar:
             <strong>UEG · LPICS</strong><br>
             <span>Laboratório LPICS</span>
             <hr>
-            <span>Novas páginas em breve</span>
         </div>
         """,
         unsafe_allow_html=True,
@@ -71,7 +78,9 @@ elif PAGINAS[st.session_state["pagina_global"]] == "dados":
     from views.base_metodologia import renderizar_base
 
     renderizar_base()
-else:
+elif PAGINAS[st.session_state["pagina_global"]] == "contato":
     from views.contato_equipe import renderizar_contato
 
     renderizar_contato()
+else:
+    st.write("Área em desenvolvimento")
